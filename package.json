@@ -1,11 +1,28 @@
 {
-  "name": "@charliecat/uber-link",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+	"name": "@charliecat/uber-link",
+	"module": "index.ts",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"version": "1.0.0",
+	"description": "A simple library to generate Uber links for ride requests.",
+	"scripts": {
+		"build": "bun build --target=node ./index.ts --outfile=dist/index.js && bun run build:declaration",
+		"build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
+		"prepublish": "bun run build"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"files": [
+		"dist/*.js",
+		"dist/*.d.ts"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/0charliecat/uber-link.git"
+	}
 }
