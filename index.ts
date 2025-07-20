@@ -81,7 +81,7 @@ export default class UberLink {
 		return `${baseDeeplink}?${params.toString()}`;
 	}
 
-	setPickup(longitude: number, latitude: number, addressLine1: string, addressLine2: string): this;
+	setPickup(longitude: number, latitude: number, addressLine1?: string, addressLine2?: string): this;
 	setPickup(location: UberLocation | "my_location"): this;
 	setPickup(longitudeOrLocation: number | UberLocation | "my_location", latitude?: number, addressLine1?: string, addressLine2?: string): this {
 		if (typeof longitudeOrLocation === "number" && latitude !== undefined && addressLine1 !== undefined && addressLine2 !== undefined) {
